@@ -69,6 +69,7 @@ class AppController extends Controller {
         if ($this->action === 'index') {
             return true;
         }
+        return false;
     }
 
 }
