@@ -9,6 +9,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class UsersController extends AppController {
+    
 
     public function beforeFilter() {
         parent::beforeFilter();
@@ -120,7 +121,7 @@ class UsersController extends AppController {
                 $this->redirect(['controller' => 'users', 'action' => 'index']);
             }
 
-            $this->Flash->error('The username or password you entered is incorrect.');
+            $this->Flash->error('Username or password is incorrect');
         }
     }
 
