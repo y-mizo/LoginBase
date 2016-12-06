@@ -4,10 +4,18 @@
         <legend><?php echo __('Edit User'); ?></legend>
         <?php
         echo $this->Form->input('id');
-        echo $this->Form->input('username');
-        echo $this->Form->input('password');
-        echo $this->Form->input('email');
-        echo $this->Form->input('role', ['options' => ['admin' => 'Admin', 'author' => 'Author']]);
+        echo $this->Form->input('username', ['required' => false]);
+        echo $this->Form->input('password', ['required' => false]);
+        echo $this->Form->input('password_confirm', ['required' => false, 'type' => 'password']);
+        echo $this->Form->input('email', ['required' => false]);
+        echo $this->Form->input('role', [
+            'required' => false,
+            'empty' => 'choose one',
+            'type' => 'select',
+            'options' => [
+                'admin' => 'Admin',
+                'author' => 'Author']
+        ]);
         ?>
     </fieldset>
     <?php echo $this->Form->end(__('Submit')); ?>
