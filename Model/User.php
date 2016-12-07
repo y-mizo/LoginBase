@@ -32,7 +32,7 @@ class User extends AppModel {
                 'message' => '正しいメールアドレスを入力してください'
             ],
             'emailExists' => [
-                'rule' => ['isUnique', 'email'],
+                'rule' => ['isUnique'],
                 'message' => '入力されたメールアドレスは既に登録されています'
             ],
         ],
