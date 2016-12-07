@@ -9,11 +9,18 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class UsersController extends AppController {
-    
 
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('logout');
+    }
+    
+    public function isAuthorized($user) {
+        if ($this->action === 'index') {
+            return true;
+        }
+
+        return parent::isAuthorized($user);
     }
 
     /**
