@@ -67,19 +67,6 @@ class PagesController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('display', 'home');
+        $this->Auth->allow(['controller' => 'pages', 'action' => 'display']);
     }
-    
-    public function page1() {
-        
-    }
-    public function page2() {
-        
-    }
-    public function page3() {
-        
-    }
-    
-
-
 }
