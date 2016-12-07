@@ -66,9 +66,7 @@ class AppController extends Controller {
         if (isset($user['role']) && $user['role'] === 'admin') {
             return true;
         }
-        if ($this->action === 'index') {
-            return true;
-        }
+        
         return false;
     }
 
