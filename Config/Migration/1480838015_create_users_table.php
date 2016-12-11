@@ -82,6 +82,17 @@ class CreateUsersTable extends CakeMigration {
      * @return bool Should process continue
      */
     public function after($direction) {
+        if ($direction === 'up') {
+            $user = new User();
+            
+            $user->save([
+                'username' => 'admin',
+                'password' => 'admin123',
+                'password_confirm' => 'adimin123',
+                'email' => 'admin@example.com',
+                'role' => 'admin',
+            ]); 
+        }
         return true;
     }
 
