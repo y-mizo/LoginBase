@@ -1,5 +1,7 @@
 <?php
 
+App::uses('User', 'Model');
+
 class CreateUsersTable extends CakeMigration {
 
     /**
@@ -88,7 +90,7 @@ class CreateUsersTable extends CakeMigration {
             $user->save([
                 'username' => 'admin',
                 'password' => 'admin123',
-                'password_confirm' => 'adimin123',
+                'password_confirm' => 'admin123',
                 'email' => 'admin@example.com',
                 'role' => 'admin',
             ]); 
