@@ -3,8 +3,8 @@
     <fieldset>
         <legend><?php echo __('Login'); ?></legend>
         <?php
-        echo $this->Form->input('username', ['required' => false]);
-        echo $this->Form->input('password', ['required' => false]);
+        echo $this->Form->input('username');
+        echo $this->Form->input('password');
         ?>
     </fieldset>
     <?php echo $this->Form->end(__('Login')); ?>
