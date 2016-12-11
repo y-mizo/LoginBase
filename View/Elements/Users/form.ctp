@@ -1,10 +1,9 @@
 <?= $this->Form->create('User'); ?>
-<?= $this->Form->input('username', ['required' => false]); ?>
-<?= $this->Form->input('password', ['required' => false]); ?>
-<?= $this->Form->input('password_confirm', ['required' => false, 'type' => 'password']); ?>
-<?= $this->Form->input('email', ['required' => false]); ?>
+<?= $this->Form->input('username'); ?>
+<?= $this->Form->input('password'); ?>
+<?= $this->Form->input('password_confirm', ['type' => 'password']); ?>
+<?= $this->Form->input('email'); ?>
 <?= $this->Form->input('role', [
-    'required' => false,
     'empty' => 'choose one',
     'type' => 'select',
     'options' => [
