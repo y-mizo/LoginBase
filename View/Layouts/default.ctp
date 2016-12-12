@@ -20,6 +20,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 //        echo $this->Html->css('cake.generic');
         echo $this->Html->css('bootstrap.min');
         echo $this->Html->css('front');
+        echo $this->Html->css('subpage');
         echo $this->Html->script('jquery.min');
         echo $this->Html->script('bootstrap.min');
 
@@ -64,18 +65,19 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                             </ul>   
                         </li>
                     <?php else : ?>
+                        <li class="divider"></li>
                         <li><?= $this->Html->link('Login', ['controller' => 'users', 'action' => 'login']); ?></li>
                     <?php endif; ?>
                 </ul>
 
             </div>
-            
+
         </nav>
 
         <div id="container">
 
-<!--            <div id="header">
-            </div>-->
+            <!--            <div id="header">
+                        </div>-->
             <div id="content">
 
                 <?php echo $this->Session->flash(); ?>
