@@ -1,5 +1,27 @@
-<h2>Hello Everyone!</h2>
+<header class="jumbotron">
+    <div class="container">
+        <h1>LoginBase</h1>
+        <p>ログインを必要とするサイトの雛形サイト</p>
+    </div>
+</header>
 
-<p><a href="pages/page1">Page 1</a></p>
-<p><a href="pages/page2">Page 2</a></p>
-<p><a href="pages/page3">Page 3</a></p>
+<div class="container marketing">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="img-circle" src="../img/head1.jpg" alt="" width="140" height="140">
+            <h2>Heading</h2>
+            <p>text area text area text area text area text area text area text area text area text area text area </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="../img/head2.jpg" alt="" width="140" height="140">
+            <h2>Heading2</h2>
+            <p>text area text area text area text area text area text area text area text area text area text area </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="../img/head3.jpg" alt="" width="140" height="140">
+            <h2>Heading3</h2>
+            <p>text area text area text area text area text area text area text area text area text area text area </p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>

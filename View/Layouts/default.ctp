@@ -17,18 +17,65 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php
         echo $this->Html->meta('icon');
 
-        echo $this->Html->css('cake.generic');
+//        echo $this->Html->css('cake.generic');
+        echo $this->Html->css('bootstrap.min');
+        echo $this->Html->css('front');
+        echo $this->Html->script('jquery.min');
+        echo $this->Html->script('bootstrap.min');
 
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
         ?>
     </head>
+
     <body>
-        <div id="container">
-            <div id="header">
-                <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+
+                <!--Logo-->
+                <span class="navbar-brand"><?= $this->Html->link('LoginBase', '/'); ?></span>
+
+                <!--toggle button-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-content">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
+
+            <div id="nav-content" class="collapse navbar-collapse">
+
+                <!--menu-->
+                <ul class="nav navbar-nav">
+                    <li><?= $this->Html->link('Page1', ['controller' => 'pages', 'action' => 'page1']); ?></li>
+                    <li><?= $this->Html->link('Page2', ['controller' => 'pages', 'action' => 'page2']); ?></li>
+                    <li><?= $this->Html->link('Page3', ['controller' => 'pages', 'action' => 'page3']); ?></li>
+                </ul>
+
+                <!--dropdown list-->                  
+                <ul class="nav navbar-nav navbar-right">    
+                    <?php if ($currentUser) : ?>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $currentUser['username'] ?><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><?= $this->Html->link('Admin Page', ['controller' => 'users', 'action' => 'index']); ?></li>                                            
+                                <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
+                            </ul>   
+                        </li>
+                    <?php else : ?>
+                        <li><?= $this->Html->link('Login', ['controller' => 'users', 'action' => 'login']); ?></li>
+                    <?php endif; ?>
+                </ul>
+
+            </div>
+            
+        </nav>
+
+        <div id="container">
+
+<!--            <div id="header">
+            </div>-->
             <div id="content">
 
                 <?php echo $this->Session->flash(); ?>
@@ -36,14 +83,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
                 <?php echo $this->fetch('content'); ?>
             </div>
-            <div id="footer">
-                <?php
-                echo $this->Html->link(
-                        $this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')), 'http://www.cakephp.org/', array('target' => '_blank', 'escape' => false)
-                );
-                ?>
-            </div>
+
+            <footer class="container-fluid">
+                <small><p style="margin: 0px">Copyright (C) 2016 y-mizo All Rights Reserved.</p></small>
+            </footer>
+
         </div>
-<?php echo $this->element('sql_dump'); ?>
-    </body>
+    </div>
+    <?php echo $this->element('sql_dump'); ?>
+</body>
 </html>
