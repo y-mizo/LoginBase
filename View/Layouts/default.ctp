@@ -86,8 +86,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 <?php echo $this->fetch('content'); ?>
             </div>
 
-            <footer class="container-fluid">
-                <small><p style="margin: 0px">Copyright (C) 2016 y-mizo All Rights Reserved.</p></small>
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted">Copyright (C) 2016 y-mizo All Rights Reserved.</p>
+                </div>
             </footer>
 
         </div>

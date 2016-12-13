@@ -14,7 +14,24 @@ header.container {
     margin-top: 50px;
 }
 
-footer {
+.form-format {
+    margin: 50px 50px 100px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     color: gray;
     text-align: center;
     padding: 15px;
@@ -32,6 +49,7 @@ footer {
     background-color: gray;
 }
 
+/*-------------------------------------------------- */
 
 
 
