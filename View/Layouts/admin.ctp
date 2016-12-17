@@ -4,39 +4,39 @@
  * @package       app.View.Layouts
  * @since         CakePHP(tm) v 0.10.0.1076
  */
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+
+$cakeDescription = __d('cake_dev', 'LoginBase');
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <?php echo $this->Html->charset(); ?>
         <title>
-            <?php echo $cakeDescription ?>:
+            <?php echo $cakeDescription ?> |
             <?php echo $this->fetch('title'); ?>
         </title>
         <?php
+        echo $this->Html->charset();
         echo $this->Html->meta('icon');
+        echo $this->Html->css('sample');
 
-//        echo $this->Html->css('cake.generic');
         echo $this->Html->css('bootstrap.min');
+        echo $this->Html->css('sticky-footer-navbar.css');
         echo $this->Html->css('front');
         echo $this->Html->css('subpage');
+        echo $this->Html->css('dashboard');
+
         echo $this->Html->script('jquery.min');
         echo $this->Html->script('bootstrap.min');
-
-        echo $this->fetch('meta');
-        echo $this->fetch('css');
-        echo $this->fetch('script');
+//        echo $scripts_for_layout;
         ?>
     </head>
-
     <body>
+        <!--navbar-->
         <nav class="navbar navbar-inverse navbar-fixed-top">
+
             <div class="navbar-header">
-
                 <!--Logo-->
-                <span class="navbar-brand"><?= $this->Html->link('LoginBase', '/'); ?></span>
-
+                <a class="navbar-brand" href="/">LoginBase</a>
                 <!--toggle button-->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-content">
                     <span class="icon-bar"></span>
@@ -45,14 +45,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 </button>
             </div>
 
-            <div id="nav-content" class="collapse navbar-collapse">
-
-                <!--menu-->
-                <ul class="nav navbar-nav">
-                    <li><?= $this->Html->link('Page1', ['controller' => 'pages', 'action' => 'page1']); ?></li>
-                    <li><?= $this->Html->link('Page2', ['controller' => 'pages', 'action' => 'page2']); ?></li>
-                    <li><?= $this->Html->link('Page3', ['controller' => 'pages', 'action' => 'page3']); ?></li>
-                </ul>
+            <!--menu-->
+            <div id="nav-content" class="collapse navbar-collapse">  
+                <!--                <ul class="nav navbar-nav">                   
+                                    <li><?= $this->Html->link('Page1', ['controller' => 'pages', 'action' => 'page1']); ?></li>
+                                    <li><?= $this->Html->link('Page2', ['controller' => 'pages', 'action' => 'page2']); ?></li>
+                                    <li><?= $this->Html->link('Page3', ['controller' => 'pages', 'action' => 'page3']); ?></li>
+                                </ul>-->
 
                 <!--dropdown list-->                  
                 <ul class="nav navbar-nav navbar-right">    
@@ -69,31 +68,37 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                         <li><?= $this->Html->link('Login', ['controller' => 'users', 'action' => 'login']); ?></li>
                     <?php endif; ?>
                 </ul>
-
             </div>
-
         </nav>
 
-        <div id="container">
-
-            <!--            <div id="header">
-                        </div>-->
-            <div id="content">
-
-                <?php echo $this->Session->flash(); ?>
-                <?php echo $this->Session->flash('auth'); ?>
-
-                <?php echo $this->fetch('content'); ?>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+            <!--<div class="col-xs-12 col-sm-3 col-md-2 sidebar">-->
+                <?php // echo $this->fetch('sidebar'); ?>
+                <ul class="nav nav-sidebar">
+                    <li><?php echo $this->Html->link(__('HOME'), array('action' => 'home')); ?></li>
+                    <li><?php echo $this->Html->link(__('USER INDEX'), array('action' => 'index')); ?></li>
+                </ul>
             </div>
+        </div>
 
-            <footer class="footer">
-                <div class="container">
-                    <p class="text-muted">Copyright (C) 2016 y-mizo All Rights Reserved.</p>
-                </div>
-            </footer>
-
+    <!--contents area-->
+    <div class="row">
+    <div class="container-fruid">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <!--<div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">-->
+            <?php echo $this->Session->flash(); ?>
+            <?php echo $this->fetch('contentarea'); ?>
         </div>
     </div>
+    </div>
+
+    <!--footer-->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Copyright (C) 2016 y-mizo All Rights Reserved.</p>
+        </div>
+    </footer>
     <?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

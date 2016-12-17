@@ -1,3 +1,4 @@
+<?php $this->start('contentarea'); ?>
 <div class="container form-format">  
     <div class="row">  
         <div class="col-md-4 col-md-offset-4">  
@@ -34,7 +35,7 @@
         </div>
     </div>
 </div>
-
+<?php $this->end(); ?>
 
 <!--<div class="users form">
 <?php echo $this->Form->create('User'); ?>

@@ -12,6 +12,7 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
+        $this->layout = 'admin';
         $this->Auth->allow('logout');
     }
     
@@ -28,13 +29,23 @@ class UsersController extends AppController {
      *
      * @var array
      */
-    public $components = array('Paginator');
+//    public $components = array('Paginator');
+    
+    public $components = [
+        'Paginator' => [
+            'limit' => 5,
+            'order' => ['id' => 'asc']
+        ]
+    ];
 
     /**
      * index method
      *
      * @return void
      */
+    public function home() {
+        
+    }
     public function index() {
         $this->User->recursive = 0;
         $this->set('users', $this->Paginator->paginate());
@@ -119,13 +130,14 @@ class UsersController extends AppController {
 
     // login
     public function login() {
+        $this->layout = "basic";
         if ($this->Auth->user()) {
             return $this->redirect($this->Auth->redirectUrl());
         }
 
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                $this->redirect(['controller' => 'users', 'action' => 'index']);
+                $this->redirect(['controller' => 'users', 'action' => 'home']);
             }
 
             $this->Flash->error('Username or password is incorrect');
