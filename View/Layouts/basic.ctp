@@ -1,17 +1,9 @@
-<?php
-/**
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- */
 
-$cakeDescription = __d('cake_dev', 'LoginBase');
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>
-            <?php echo $cakeDescription ?> |
+            LoginBase |
             <?php echo $this->fetch('title'); ?>
         </title>
     <head>
@@ -22,7 +14,8 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
         <?php
         echo $this->Html->charset();
         echo $this->Html->meta('icon');
-        echo $this->Html->css('sample');
+        echo $this->fetch('css');
+        echo $this->fetch('script');
 
         echo $this->Html->css('bootstrap.min');
         echo $this->Html->css('sticky-footer-navbar.css');
@@ -76,13 +69,11 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
             </div>
         </nav>
 
-        <!--contents area-->
-        <div class="container-fruid">
+        <!--contents area-->      
             <div id="content">
                 <?php echo $this->Session->flash(); ?>
-                <?php echo $this->fetch('contentarea'); ?>
+                <?php echo $this->fetch('content'); ?>
             </div>
-        </div>
 
         <!--footer-->
         <footer class="footer">

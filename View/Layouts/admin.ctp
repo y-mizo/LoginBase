@@ -1,23 +1,15 @@
-<?php
-/**
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- */
-
-$cakeDescription = __d('cake_dev', 'LoginBase');
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>
-            <?php echo $cakeDescription ?> |
+            LoginBase |
             <?php echo $this->fetch('title'); ?>
         </title>
         <?php
         echo $this->Html->charset();
         echo $this->Html->meta('icon');
-        echo $this->Html->css('sample');
+        echo $this->fetch('css');
+        echo $this->fetch('script');
 
         echo $this->Html->css('bootstrap.min');
         echo $this->Html->css('sticky-footer-navbar.css');
@@ -27,7 +19,6 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
 
         echo $this->Html->script('jquery.min');
         echo $this->Html->script('bootstrap.min');
-//        echo $scripts_for_layout;
         ?>
     </head>
     <body>
@@ -59,7 +50,8 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $currentUser['username'] ?><span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><?= $this->Html->link('Admin Page', ['controller' => 'users', 'action' => 'index']); ?></li>                                            
+                                <li><?= $this->Html->link('Admin Page', ['controller' => 'users', 'action' => 'home']); ?></li>
+                                <li><?= $this->Html->link('Change Password', ['controller' => 'users', 'action' => 'changePassword']); ?></li>
                                 <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                             </ul>   
                         </li>
@@ -70,6 +62,8 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
                 </ul>
             </div>
         </nav>
+        
+    <div class="container-fruid">
 
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
@@ -80,15 +74,14 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
                     <li><?php echo $this->Html->link(__('USER INDEX'), array('action' => 'index')); ?></li>
                 </ul>
             </div>
-        </div>
+        <!--</div>-->
 
     <!--contents area-->
-    <div class="row">
-    <div class="container-fruid">
+    <!--<div class="row">-->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <!--<div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">-->
             <?php echo $this->Session->flash(); ?>
-            <?php echo $this->fetch('contentarea'); ?>
+            <?php echo $this->fetch('content'); ?>
         </div>
     </div>
     </div>

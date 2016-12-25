@@ -15,9 +15,11 @@ class UsersController extends AppController {
         $this->layout = 'admin';
         $this->Auth->allow('logout');
     }
-    
+
     public function isAuthorized($user) {
-        if ($this->action === 'index') {
+        $action = $this->request->params['action'];
+        if (in_array($action, ['index', 'home', 'changePassword'])) {
+//        if ($this->action === 'home') {
             return true;
         }
 
@@ -30,7 +32,7 @@ class UsersController extends AppController {
      * @var array
      */
 //    public $components = array('Paginator');
-    
+
     public $components = [
         'Paginator' => [
             'limit' => 5,
@@ -46,6 +48,7 @@ class UsersController extends AppController {
     public function home() {
         
     }
+
     public function index() {
         $this->User->recursive = 0;
         $this->set('users', $this->Paginator->paginate());
@@ -136,7 +139,9 @@ class UsersController extends AppController {
         }
 
         if ($this->request->is('post')) {
+
             if ($this->Auth->login()) {
+
                 $this->redirect(['controller' => 'users', 'action' => 'home']);
             }
 
@@ -149,4 +154,17 @@ class UsersController extends AppController {
         $this->redirect($this->Auth->logout());
     }
 
+    public function changePassword() {
+            if ($this->request->is(['post', 'put'])) {
+
+                if ($this->User->save($this->request->data)) {
+                    $this->Flash->success('パスワードを更新しました');
+
+                    return $this->redirect($this->Auth->redirectUrl());
+                }
+            } else {
+                $this->request->data = ['User' => ['id' => $this->Auth->user('id')]];
+            }
+    }
+    
 }

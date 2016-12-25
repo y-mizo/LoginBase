@@ -1,4 +1,10 @@
-<?php $this->start('contentarea'); ?>
+<head>
+    <title>
+        <?php $this->assign('title', 'login'); ?>
+    </title>
+</head>
+
+<?php // $this->start('contentarea'); ?>
 <div class="container form-format">  
     <div class="row">  
         <div class="col-md-4 col-md-offset-4">  
@@ -16,12 +22,12 @@
                 <legend><b>Login</b></legend>
                 <?php
                 echo $this->Form->input('username', array(
-                    'placeholder' => 'Username'
+//                    'placeholder' => 'Username'
                 ));
                 ?>
                 <?php
                 echo $this->Form->input('password', array(
-                    'placeholder' => 'Password'
+//                    'placeholder' => 'Password'
                 ));
                 ?>
                 <?php
@@ -35,4 +41,4 @@
         </div>
     </div>
 </div>
-<?php $this->end(); ?>
+<?php // $this->end(); ?>

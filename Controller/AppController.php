@@ -32,7 +32,7 @@ class AppController extends Controller {
         'DebugKit.Toolbar',
         'Flash',
         'Auth' => [
-            // start boostcake
+//             start boostcake
             'flash' => array(
                 'element' => 'alert',
                 'key' => 'auth',

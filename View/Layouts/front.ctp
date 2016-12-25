@@ -1,33 +1,26 @@
-<?php
-/**
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- */
 
-$cakeDescription = __d('cake_dev', 'LoginBase');
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>
-            <?php echo $cakeDescription ?> |
+            LoginBase |
             <?php echo $this->fetch('title'); ?>
         </title>
         <?php
         echo $this->Html->charset();
         echo $this->Html->meta('icon');
-        echo $this->Html->css('sample');
+        echo $this->fetch('css');
+        echo $this->fetch('script');
 
         echo $this->Html->css('bootstrap.min');
         echo $this->Html->css('sticky-footer-navbar.css');
         echo $this->Html->css('front');
-        echo $this->Html->css('subpage');
+        
+       
 
-//        echo $this->Html->css('subpage');
         echo $this->Html->script('jquery.min');
         echo $this->Html->script('bootstrap.min');
-//        echo $scripts_for_layout;
+
         ?>
     </head>
     <body>
@@ -59,7 +52,8 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $currentUser['username'] ?><span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><?= $this->Html->link('Admin Page', ['controller' => 'users', 'action' => 'home']); ?></li>                                            
+                                <li><?= $this->Html->link('Admin Page', ['controller' => 'users', 'action' => 'home']); ?></li>
+                                <li><?= $this->Html->link('Change Password', ['controller' => 'users', 'action' => 'changePassword']); ?></li>
                                 <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                             </ul>   
                         </li>
@@ -74,17 +68,23 @@ $cakeDescription = __d('cake_dev', 'LoginBase');
         <!--jumbotron-->
         <header class="jumbotron">
             <div class="container">
-                <?php echo $this->fetch('desc'); ?>
+                <?php echo $this->fetch('title_area'); ?>
             </div>
         </header>
 
         <!--contents area-->
-        <div class="container-fruid">
-            <div id="content">
-                <?php echo $this->Session->flash(); ?>
-                <?php echo $this->fetch('contentarea'); ?>
-            </div>
+        <div id="content">
+
+            <?php echo $this->Session->flash(); ?>
+
+            <?php echo $this->fetch('content'); ?>
         </div>
+        <!--        <div class="container-fruid">
+                    <div id="content">-->
+        <?php // echo $this->Session->flash(); ?>
+        <?php // echo $this->fetch('contentarea'); ?>
+        <!--            </div>
+                </div>-->
 
         <!--footer-->
         <footer class="footer">

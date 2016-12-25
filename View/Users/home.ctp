@@ -1,3 +1,6 @@
-<?php $this->start('contentarea'); ?>
+<head>
+    <title>
+        <?php $this->assign('title', 'admin page top'); ?>
+    </title>
+</head>
 <h2>WELCOME to Admin Page</h2>
-<?php $this->end(); ?>

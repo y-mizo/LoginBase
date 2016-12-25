@@ -1,12 +1,20 @@
+<?php $this->start('css'); ?>
+<style>
+    header.jumbotron {
+        background: url("../img/main.jpg");}
+</style>
+<?= $this->Html->css('top'); ?>
+
+<?php $this->end(); ?>
 
 
 <?php $this->assign('title', 'Top'); ?>
-<?php $this->start('desc'); ?>
+<?php $this->start('title_area'); ?>
 <h1>LoginBase</h1>
 <p>ログインを必要とするサイトの雛形サイト</p>
 <?php $this->end(); ?>
 
-<?php $this->start('contentarea'); ?>
+
 <div class="container marketing">
     <!--Three columns of text below the carousel--> 
     <div class="row">
@@ -30,6 +38,6 @@
         </div> <!--/.col-lg-4--> 
         
     </div> <!--/.row--> 
-</div>
+
 <?php $this->end(); ?>
 

@@ -1,16 +1,24 @@
+<head>
+    <title>
+        <?php $this->assign('title', 'users index'); ?>
+    </title>
+</head>
 
-<?php $this->start('contentarea'); ?>
+<?php $this->start('css'); ?>
 <style>
     .paging {
         margin-bottom: 100px;
     }
 </style>
+<?php $this->end(); ?>
+
     <!--<h1 class="page-header">Dashboard</h1>-->
 
     <div class="users index">
         <h2><?php echo __('Users index'); ?></h2>
         <?php if ($currentUser['role'] === 'admin') : ?>
-            <p class="text-right"><?php echo $this->Html->link(__('Add New User'), array('action' => 'add')); ?></p>
+        <?php echo $this->Html->link(__('add new user'), array('action' => 'add', $user['User']['id']), ['class' => 'btn btn-primary btn-success']); ?>
+            <p class="text-right"><?php // echo $this->Html->link(__('Add New User'), array('action' => 'add')); ?></p>
         <?php endif; ?>
         <div class="table-responsive">
             <table class="table table-striped">
@@ -40,11 +48,10 @@
                         <!--<td><?php echo h($user['User']['created']); ?>&nbsp;</td>-->
                             <!--<td><?php echo h($user['User']['modified']); ?>&nbsp;</td>-->
                             <?php if ($currentUser['role'] === 'admin') : ?>
-
                                 <td class="actions">
-                                    <button type="button" class="btn btn-info"><?php echo $this->Html->link(__('View'), array('action' => 'view', $user['User']['id'])); ?></button>
-                                    <button type="button" class="btn btn-warning"><?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id'])); ?></button>
-                                    <button type="button" class="btn btn-danger"><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $user['User']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?></button>
+                                    <?php echo $this->Html->link(__('view'), array('action' => 'view', $user['User']['id']), ['class' => 'btn btn-primary btn-info']); ?>
+                                    <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id']), ['class' => 'btn btn-warning btn-info']); ?>                                    
+                                    <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-primary btn-danger', 'confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?>
                                 </td>
                             <?php endif; ?>
                         </tr>
@@ -68,4 +75,4 @@
     </div>
 
     
-<?php $this->end(); ?>
+
