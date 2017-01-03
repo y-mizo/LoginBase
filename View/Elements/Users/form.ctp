@@ -5,7 +5,8 @@ echo $this->Form->create('User', array(
         'wrapInput' => false,
         'class' => 'form-control'
     ),
-    'class' => 'well'
+    'class' => 'well',
+    'novalidate' => true,  // サーバ側バリデーション確認
 ));
 ?>
 <fieldset>
@@ -13,7 +14,6 @@ echo $this->Form->create('User', array(
 
     <?php
     echo $this->Form->input('username', array(
-//        'required' => 'false'
 //    'placeholder' => 'Username'
     ));
     ?>
@@ -21,14 +21,12 @@ echo $this->Form->create('User', array(
         <?php
         echo $this->Form->input('password', array(
 //            'placeholder' => 'Password',
-//        'required' => 'false'
         ));
         ?>
         <?php
         echo $this->Form->input('password_confirm', array(
 //            'placeholder' => 'Password_confirm',
             'type' => 'password',
-//        'required' => 'false'
         ));
         ?>
     <?php endif; ?>
@@ -42,7 +40,6 @@ echo $this->Form->create('User', array(
     echo $this->Form->input('role', array(
         'empty' => 'Choose one',
         'type' => 'select',
-//        'required' => 'false',
         'options' => [
             'admin' => 'Admin',
             'author' => 'Author']

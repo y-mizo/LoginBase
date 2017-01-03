@@ -1,8 +1,4 @@
-<head>
-    <title>
-        <?php $this->assign('title', 'add'); ?>
-    </title>
-</head>
+<?php $this->assign('title', '新規登録'); ?>
 
 <div class="row">  
     <div class="col-md-4 col-md-offset-4">  

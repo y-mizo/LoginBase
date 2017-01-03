@@ -60,14 +60,14 @@ class AppController extends Controller {
                 'Controller'
             ],
             'loginRedirect' => [
-                'controller' => 'users',
-                'action' => 'home'
+                'controller' => 'admins',
+                'action' => 'index'
             ],
             'logoutRedirect' => [
                 'controller' => 'pages',
-                'action' => '/'
+                'action' => 'display'
             ],
-            'authError' => 'Please log in.',
+            'authError' => 'ログインしてください。 Please log in.',
         ],
     ];
 

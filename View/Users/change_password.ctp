@@ -1,8 +1,4 @@
-<head>
-    <title>
-        <?php $this->assign('title', 'change password'); ?>
-    </title>
-</head>
+<?php $this->assign('title', 'パスワード変更'); ?>
 
 <div class="row">  
     <div class="col-md-4 col-md-offset-4">  
@@ -37,7 +33,7 @@ echo $this->Form->create('User', array(
         <?= $this->Form->hidden('id'); ?>
     <?php endif; ?>
     <?php
-    echo $this->Form->submit($submitLabel, array(
+    echo $this->Form->submit('Submit', array(
         'div' => 'form-group',
         'class' => 'btn btn-primary'
     ));

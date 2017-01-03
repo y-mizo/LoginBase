@@ -1,8 +1,4 @@
-<head>
-    <title>
-        <?php $this->assign('title', 'login'); ?>
-    </title>
-</head>
+<?php $this->assign('title', 'ログイン'); ?>
 
 <?php // $this->start('contentarea'); ?>
 <div class="container form-format">  

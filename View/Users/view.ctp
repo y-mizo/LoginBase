@@ -1,18 +1,10 @@
-<head>
-    <title>
-        <?php $this->assign('title', 'view'); ?>
-    </title>
-</head>
+<?php $this->assign('title', '詳細表示'); ?>
 
-<h2><?php echo __('About User'); ?></h2>
+<h2><?php echo __('詳細表示'); ?></h2>
 <div class="actions">
     <ul class="list-inline text-right">
-        <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id']), ['class' => 'btn btn-warning btn-info']); ?>
-        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-primary btn-danger', 'confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?>
-        <!--<li><?php echo $this->Html->link(__('Edit User'), array('action' => 'edit', $user['User']['id'])); ?> </li>-->
-        <!--<li><?php echo $this->Form->postLink(__('Delete User'), array('action' => 'delete', $user['User']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?> </li>-->
-        <!--<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?> </li>-->
-        <!--<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?> </li>-->
+        <li><?php echo $this->Html->link(__('編集'), array('action' => 'edit', $user['User']['id']), ['class' => 'btn btn-warning btn-info']); ?></li>
+        <li><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-primary btn-danger', 'confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?></li>
     </ul>
 </div>
 
