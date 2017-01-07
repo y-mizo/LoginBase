@@ -1,12 +1,7 @@
-<div class="users form">
-    <fieldset>
-        <legend><?php echo __('Add User'); ?></legend>
-        <?= $this->element('Users/form', ['submitLabel' => 'Submit']); ?>
-    </fieldset>
-</div>
-<div class="actions">
-    <h3><?php echo __('Actions'); ?></h3>
-    <ul>
-        <li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-    </ul>
+<?php $this->assign('title', '新規登録'); ?>
+
+<div class="row">  
+    <div class="col-md-4 col-md-offset-4">  
+        <?= $this->element('Users/form', ['submitLabel' => 'Submit', 'legend' => 'Add user']); ?>
+    </div>
 </div>

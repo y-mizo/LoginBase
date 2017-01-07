@@ -1,0 +1,19 @@
+header.jumbotron {
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+
+header.jumbotron.top {
+    padding-top: 200px;
+}
+
+.row.page {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.col-md-9.content-area {
+    padding-left: 50px;
+    /*padding-right: 50px;*/
+}

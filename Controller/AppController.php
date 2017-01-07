@@ -32,6 +32,16 @@ class AppController extends Controller {
         'DebugKit.Toolbar',
         'Flash',
         'Auth' => [
+//             start boostcake
+            'flash' => array(
+                'element' => 'alert',
+                'key' => 'auth',
+                'params' => array(
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-error'
+                )
+            ),
+            // end boostcake
             'loginAction' => [
                 'controller' => 'users',
                 'action' => 'login',
@@ -50,14 +60,14 @@ class AppController extends Controller {
                 'Controller'
             ],
             'loginRedirect' => [
-                'controller' => 'users',
+                'controller' => 'admins',
                 'action' => 'index'
             ],
             'logoutRedirect' => [
-                'controller' => 'users',
-                'action' => 'login'
+                'controller' => 'pages',
+                'action' => 'display'
             ],
-            'authError' => 'Please log in.',
+            'authError' => 'ログインしてください。 Please log in.',
         ],
     ];
 
@@ -66,8 +76,16 @@ class AppController extends Controller {
         if (isset($user['role']) && $user['role'] === 'admin') {
             return true;
         }
-        
+
         return false;
     }
+
+    // boostcake
+    public $helpers = array(
+        'Session',
+        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
+    );
 
 }
