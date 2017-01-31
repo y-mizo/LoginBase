@@ -22,7 +22,6 @@
             <?php if ($currentUser) : ?>
                 <li><?= $this->Html->link('管理画面へ', ['controller' => 'admins', 'action' => 'index']); ?></li>
             <?php else : ?>
-                <li class="divider"></li>
                 <li><?= $this->Html->link('ログイン', ['controller' => 'users', 'action' => 'login']); ?></li>
             <?php endif; ?>
         </ul>

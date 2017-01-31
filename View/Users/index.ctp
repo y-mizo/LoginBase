@@ -1,9 +1,9 @@
 <?php $this->assign('title', 'ユーザ一覧'); ?>
 
 <div class="users index">
-    <h2><?php echo __('ユーザ一覧'); ?></h2>
+    <h1><?php echo __('ユーザ一覧'); ?></h1>
     <?php if ($currentUser['role'] === 'admin') : ?>
-        <?php echo $this->Html->link(__('ユーザ新規登録'), array('action' => 'add'), ['class' => 'btn btn-primary btn-success']); ?>
+        <?php echo $this->Html->link(__('ユーザ新規登録'), array('action' => 'add'), ['class' => 'btn btn-success']); ?>
     <?php endif; ?>
     <div class="table-responsive">
         <table class="table table-striped">
@@ -33,9 +33,9 @@
                         <!--<td><?php echo h($user['User']['modified']); ?>&nbsp;</td>-->
                         <?php if ($currentUser['role'] === 'admin') : ?>
                             <td class="actions">
-                                <?php echo $this->Html->link(__('詳細表示'), array('action' => 'view', $user['User']['id']), ['class' => 'btn btn-primary btn-info']); ?>
-                                <?php echo $this->Html->link(__('編集'), array('action' => 'edit', $user['User']['id']), ['class' => 'btn btn-warning btn-info']); ?>                                    
-                                <?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-primary btn-danger', 'confirm' => __('本当に削除しますか? Are you sure you want to delete # %s?', $user['User']['id']))); ?>
+                                <?php echo $this->Html->link(__('詳細'), array('action' => 'view', $user['User']['id']), ['class' => 'btn btn-info']); ?>
+                                <?php echo $this->Html->link(__('編集'), array('action' => 'edit', $user['User']['id']), ['class' => 'btn btn-warning']); ?>                                    
+                                <?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-danger', 'confirm' => __('本当に削除しますか? Are you sure you want to delete # %s?', $user['User']['id']))); ?>
                             </td>
                         <?php endif; ?>
                     </tr>

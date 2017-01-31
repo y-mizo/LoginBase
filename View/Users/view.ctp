@@ -1,10 +1,10 @@
 <?php $this->assign('title', '詳細表示'); ?>
 
-<h2><?php echo __('詳細表示'); ?></h2>
+<h1><?php echo __('詳細表示'); ?></h1>
 <div class="actions">
     <ul class="list-inline text-right">
-        <li><?php echo $this->Html->link(__('編集'), array('action' => 'edit', $user['User']['id']), ['class' => 'btn btn-warning btn-info']); ?></li>
-        <li><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-primary btn-danger', 'confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?></li>
+        <li><?php echo $this->Html->link(__('編集'), array('action' => 'edit', $user['User']['id']), ['class' => 'btn btn-warning']); ?></li>
+        <li><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-danger', 'confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?></li>
     </ul>
 </div>
 
