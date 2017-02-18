@@ -1,9 +1,11 @@
 # LoginBase
 
 ## 概要
-ログインを必要とするサイトのための雛形サイト。  
-XAMPP環境、CakePHP2.8.9 で作成。
+
 ![概要](https://raw.githubusercontent.com/y-mizo/LoginBase/master/webroot/img/login_base.png)
+
+ログインを必要とするサイトのための雛形サイト。  
+XAMPP環境、CakePHP2.8.* で作成。
 
 ## 要件
 * PHP 5.6 以上
