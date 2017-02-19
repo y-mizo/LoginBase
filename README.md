@@ -4,6 +4,8 @@
 
 ![概要](https://raw.githubusercontent.com/y-mizo/LoginBase/master/webroot/img/login_base.png)
 
+[デモサイトはこちら](http://loginbase.unateco.com/)
+
 ログインを必要とするサイトのための雛形サイト。  
 XAMPP環境、CakePHP2.8.* で作成。
 
@@ -31,8 +33,8 @@ tmp
 ```
 
 ## データベースのセットアップ
-※ 事前に MySQL 内に空のデータベースを作成しておく。
-  文字コードは UTF8 。
+※ 事前に MySQL 内に空のデータベースを作成しておく。  
+文字コードは UTF8 。
 
 ▼ database.php ファイルを作成
 ```
